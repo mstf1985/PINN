@@ -61,6 +61,9 @@ class PhysicsInformedNN:
         
         self.u_pred, self.v_pred, self.p_pred, self.f_u_pred, self.f_v_pred = self.net_NS(self.x_tf, self.y_tf, self.t_tf)
         
+        #### For new problem
+        #self.u_pred, self.v_pred, self.w_pred, self.p_pred, self.T_pred = self.net_NST(self.x_tf, self.y_tf, self.t_tf)
+        
         self.loss = tf.reduce_sum(tf.square(self.u_tf - self.u_pred)) + \
                     tf.reduce_sum(tf.square(self.v_tf - self.v_pred)) + \
                     tf.reduce_sum(tf.square(self.f_u_pred)) + \
